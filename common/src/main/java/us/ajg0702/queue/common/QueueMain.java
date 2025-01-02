@@ -246,117 +246,116 @@ public class QueueMain extends AjQueueAPI {
     private void constructMessages() {
         LinkedHashMap<String, Object> d = new LinkedHashMap<>();
 
-        d.put("status.offline.base", "&c{SERVER} is {STATUS}. &7You are in position &f{POS}&7 of &f{LEN}&7.");
+        d.put("status.offline.base", "&c{SERVER} 是 {STATUS}. &7你在位置 &f{POS}&7 的 &f{LEN}&7.");
 
-        d.put("status.offline.offline", "offline");
-        d.put("status.offline.restarting", "restarting");
-        d.put("status.offline.full", "full");
-        d.put("status.offline.restricted", "restricted");
-        d.put("status.offline.paused", "paused");
-        d.put("status.offline.whitelisted", "whitelisted");
+        d.put("status.offline.offline", "离线");
+        d.put("status.offline.restarting", "重启中");
+        d.put("status.offline.full", "已满");
+        d.put("status.offline.restricted", "受限");
+        d.put("status.offline.paused", "暂停");
+        d.put("status.offline.whitelisted", "白名单");
 
-        d.put("status.online.base", "&7You are in position &f{POS}&7 of &f{LEN}&7. Estimated time: {TIME}");
-        d.put("status.left-last-queue", "&aYou left the last queue you were in.");
-        d.put("status.now-in-queue", "&aYou are now queued for {SERVER}! &7You are in position &f{POS}&7 of &f{LEN}&7.\n&7Type &f/leavequeue&7 or &f<click:run_command:/leavequeue {SERVERNAME}>click here</click>&7 to leave the queue!");
+        d.put("status.online.base", "&7你在位置 &f{POS}&7 的 &f{LEN}&7. 预计时间: {TIME}");
+        d.put("status.left-last-queue", "&a你离开了最后一个队列.");
+        d.put("status.now-in-queue", "&a你现在排队等待 {SERVER}! &7你在位置 &f{POS}&7 的 &f{LEN}&7.\n&7输入 &f/leavequeue&7 或 &f<click:run_command:/leavequeue {SERVERNAME}>点击这里</click>&7 离开队列!");
         d.put("status.now-in-empty-queue", "");
-        d.put("status.sending-now", "&aSending you to &f{SERVER} &anow..");
-        d.put("status.making-room", "<gold>Making room for you..");
-        d.put("status.priority-increased", "<gold>You now have higher priority! <green>Moving you up in the queue..");
+        d.put("status.sending-now", "&a现在将你发送到 &f{SERVER} &a..");
+        d.put("status.making-room", "<gold>正在为你腾出空间..");
+        d.put("status.priority-increased", "<gold>你现在有更高的优先级! <green>在队列中向上移动..");
 
-        d.put("errors.server-not-exist", "&cThe server {SERVER} does not exist!");
-        d.put("errors.already-queued", "&cYou are already queued for that server!");
-        d.put("errors.player-only", "&cThis command can only be executed as a player!");
-        d.put("errors.already-connected", "&cYou are already connected to this server!");
-        d.put("errors.cant-join-paused", "&cYou cannot join the queue for {SERVER} because it is paused.");
-        d.put("errors.deny-joining-from-server", "&cYou are not allowed to join queues from this server!");
-        d.put("errors.wrong-version.base", "<red>You must be on {VERSIONS} to join this server!");
-        d.put("errors.wrong-version.or", " or ");
+        d.put("errors.server-not-exist", "&c服务器 {SERVER} 不存在!");
+        d.put("errors.already-queued", "&c你已经在该服务器的队列中!");
+        d.put("errors.player-only", "&c此命令只能由玩家执行!");
+        d.put("errors.already-connected", "&c你已经连接到此服务器!");
+        d.put("errors.cant-join-paused", "&c你不能加入 {SERVER} 的队列，因为它已暂停.");
+        d.put("errors.deny-joining-from-server", "&c你不允许从此服务器加入队列!");
+        d.put("errors.wrong-version.base", "<red>你必须使用 {VERSIONS} 才能加入此服务器!");
+        d.put("errors.wrong-version.or", " 或 ");
         d.put("errors.wrong-version.comma", ", ");
-        d.put("errors.too-fast-queue", "<red>You're queueing too fast!");
-        d.put("errors.kicked-to-make-room", "<red>You were moved to the lobby to make room for another player.");
-        d.put("errors.make-room-failed.player", "<red>Failed to make room for you in that server.");
-        d.put("errors.make-room-failed.admin", "<red>Failed to make room for you in that server. Check the console for more information.");
+        d.put("errors.too-fast-queue", "<red>你排队太快了!");
+        d.put("errors.kicked-to-make-room", "<red>你被移到大厅以腾出空间给其他玩家.");
+        d.put("errors.make-room-failed.player", "<red>未能为你在该服务器腾出空间.");
+        d.put("errors.make-room-failed.admin", "<red>未能为你在该服务器腾出空间. 请检查控制台以获取更多信息.");
 
+        d.put("commands.leave-queue", "&a你离开了 {SERVER} 的队列!");
+        d.put("commands.reload", "&a配置和消息已成功重新加载!");
+        d.put("commands.joinqueue.usage", "&c用法: /joinqueue <server>");
+        d.put("commands.kick.usage", "<red>用法: /ajqueue kick <player> [queue]");
+        d.put("commands.kick.no-player", "&c找不到 {PLAYER}! 确保他们在队列中!");
+        d.put("commands.kick.unknown-server", "&c找不到队列 {QUEUE}. 确保你拼写正确!");
+        d.put("commands.kick.success", "<green>从 {NUM} 队列{s}中踢出 <white>{PLAYER}<green>!");
+        d.put("commands.kickall.usage", "<red>用法: /ajqueue kickall <queue>");
+        d.put("commands.kickall.success", "<green>从 <white>{SERVER}<green>中踢出 <white>{NUM}<green>玩家{s}!");
+        d.put("commands.pausequeueserver.unpaused", "<green>你不再暂停! <gray>你现在可以正常使用队列服务器.");
+        d.put("commands.pausequeueserver.paused", "<green>你现在已暂停! <gray>你将不再使用队列服务器.");
+        d.put("commands.pausequeueserver.reminder", "<gold>提醒: <yellow>你当前已暂停队列服务器，因此你将不再使用它们!<gray> 使用 <white>/ajQueue pausequeueserver</white> 取消暂停并恢复正常行为");
 
-        d.put("commands.leave-queue", "&aYou left the queue for {SERVER}!");
-        d.put("commands.reload", "&aConfig and messages reloaded successfully!");
-        d.put("commands.joinqueue.usage", "&cUsage: /joinqueue <server>");
-        d.put("commands.kick.usage", "<red>Usage: /ajqueue kick <player> [queue]");
-        d.put("commands.kick.no-player", "&cCould not find {PLAYER}! Make sure they are in a queue!");
-        d.put("commands.kick.unknown-server", "&cCould not find queue {QUEUE}. Make sure you spelled it correctly!");
-        d.put("commands.kick.success", "<green>Kicked <white>{PLAYER} <green>from {NUM} queue{s}!");
-        d.put("commands.kickall.usage", "<red>Usage: /ajqueue kickall <queue>");
-        d.put("commands.kickall.success", "<green>Kicked <white>{NUM} <green>player{s} from <white>{SERVER}<green>!");
-        d.put("commands.pausequeueserver.unpaused", "<green>You are no longer paused! <gray>You can now use queue-servers normally.");
-        d.put("commands.pausequeueserver.paused", "<green>You are now paused! <gray>You will no longer be sent using queue-servers.");
-        d.put("commands.pausequeueserver.reminder", "<gold>Reminder: <yellow>You are currently paused for queue-servers, so you will not be sent using them!<gray> Use <white>/ajQueue pausequeueserver</white> to un-pause and return to normal behaviour");
+        d.put("noperm", "&c你没有权限执行此操作!");
 
-        d.put("noperm", "&cYou do not have permission to do this!");
-
-        d.put("format.time.mins", "{m}m {s}s");
-        d.put("format.time.secs", "{s} seconds");
+        d.put("format.time.mins", "{m}分 {s}秒");
+        d.put("format.time.secs", "{s} 秒");
 
         d.put("list.format", "&b{SERVER} &7({COUNT}): {LIST}");
         d.put("list.playerlist", "&9{NAME}&7, ");
-        d.put("list.total", "&7Total players in queues: &f{TOTAL}");
-        d.put("list.none", "&7None");
+        d.put("list.total", "&7队列中的总玩家数: &f{TOTAL}");
+        d.put("list.none", "&7无");
 
-        d.put("spigot.actionbar.online", "&7You are queued for &f{SERVER}&7. You are in position &f{POS}&7 of &f{LEN}&7. Estimated time: {TIME}");
-        d.put("spigot.actionbar.offline", "&7You are queued for &f{SERVER}&7. &7You are in position &f{POS}&7 of &f{LEN}&7.");
+        d.put("spigot.actionbar.online", "&7你正在排队等待 &f{SERVER}&7. 你在位置 &f{POS}&7 的 &f{LEN}&7. 预计时间: {TIME}");
+        d.put("spigot.actionbar.offline", "&7你正在排队等待 &f{SERVER}&7. &7你在位置 &f{POS}&7 的 &f{LEN}&7.");
 
-        d.put("send", "&aAdded &f{PLAYER}&a to the queue for &f{SERVER}");
-        d.put("remove", "&aRemoved &f{PLAYER} from all queues they were in.");
+        d.put("send", "&a已将 &f{PLAYER}&a 添加到 &f{SERVER} 的队列中");
+        d.put("remove", "&a已将 &f{PLAYER} 从他们所在的所有队列中移除.");
 
-        d.put("placeholders.queued.none", "None");
-        d.put("placeholders.position.none", "None");
-        d.put("placeholders.estimated_time.none", "None");
+        d.put("placeholders.queued.none", "无");
+        d.put("placeholders.position.none", "无");
+        d.put("placeholders.estimated_time.none", "无");
 
-        d.put("placeholders.status.online", "&aOnline");
-        d.put("placeholders.status.offline", "&cOffline");
-        d.put("placeholders.status.restarting", "&cRestarting");
-        d.put("placeholders.status.full", "&eFull");
-        d.put("placeholders.status.restricted", "&eRestricted");
-        d.put("placeholders.status.paused", "&ePaused");
-        d.put("placeholders.status.whitelisted", "&eWhitelisted");
+        d.put("placeholders.status.online", "&a在线");
+        d.put("placeholders.status.offline", "&c离线");
+        d.put("placeholders.status.restarting", "&c重启中");
+        d.put("placeholders.status.full", "&e已满");
+        d.put("placeholders.status.restricted", "&e受限");
+        d.put("placeholders.status.paused", "&e暂停");
+        d.put("placeholders.status.whitelisted", "&e白名单");
 
         d.put("title.title", "");
-        d.put("title.subtitle", "<gold>You are <green>#{POS} <gold>in the queue!");
+        d.put("title.subtitle", "<gold>你在队列中 <green>#{POS} <gold>!");
         d.put("title.sending-now.title", "");
-        d.put("title.sending-now.subtitle", "<green>Sending you to <white>{SERVER} <green>now..");
+        d.put("title.sending-now.subtitle", "<green>现在将你发送到 <white>{SERVER} <green>..");
 
-        d.put("commands.leave.more-args", "&cPlease specify which queue you want to leave! &7You are in these queues: {QUEUES}");
+        d.put("commands.leave.more-args", "&c请指定你要离开的队列! &7你在这些队列中: {QUEUES}");
         d.put("commands.leave.queues-list-format", "&f{NAME}&7, ");
-        d.put("commands.leave.not-queued", "&cYou are not queued for that server! &7You are in these queues: {QUEUES}");
-        d.put("commands.leave.no-queues", "&cYou are not queued!");
+        d.put("commands.leave.not-queued", "&c你不在该服务器的队列中! &7你在这些队列中: {QUEUES}");
+        d.put("commands.leave.no-queues", "&c你不在任何队列中!");
 
-        d.put("commands.pause.more-args", "&cUsage: /ajqueue pause <server> [on/off]");
-        d.put("commands.pause.no-server", "&cThat server does not exist!");
-        d.put("commands.pause.success", "&aThe queue for &f{SERVER} &ais now {PAUSED}");
-        d.put("commands.pause.paused.true", "&epaused");
-        d.put("commands.pause.paused.false", "&aun-paused");
+        d.put("commands.pause.more-args", "&c用法: /ajqueue pause <server> [on/off]");
+        d.put("commands.pause.no-server", "&c该服务器不存在!");
+        d.put("commands.pause.success", "&a队列 &f{SERVER} &a现在 {PAUSED}");
+        d.put("commands.pause.paused.true", "&e暂停");
+        d.put("commands.pause.paused.false", "&a未暂停");
 
-        d.put("commands.send.player-not-found", "&cThat player could not be found. Make sure they are online!");
-        d.put("commands.send.usage", "<red>Usage: /ajqueue send <player> <server>");
+        d.put("commands.send.player-not-found", "&c找不到该玩家. 确保他们在线!");
+        d.put("commands.send.usage", "<red>用法: /ajqueue send <player> <server>");
 
-        d.put("commands.listqueues.header", "&9Queues:");
-        d.put("commands.listqueues.format", "<hover:show_text:'&7Status: {STATUS}'>{COLOR}{NAME}&7: {COUNT} queued</hover>");
+        d.put("commands.listqueues.header", "&9队列:");
+        d.put("commands.listqueues.format", "<hover:show_text:'&7状态: {STATUS}'>{COLOR}{NAME}&7: {COUNT} 排队</hover>");
 
-        d.put("max-tries-reached", "&cUnable to connect to {SERVER}. Max retries reached.");
-        d.put("auto-queued", "&aYou've been auto-queued for {SERVER} because you were kicked.");
+        d.put("max-tries-reached", "&c无法连接到 {SERVER}. 达到最大重试次数.");
+        d.put("auto-queued", "&a你已被自动排队等待 {SERVER} 因为你被踢出.");
 
-        d.put("velocity-kick-message", "<red>You were kicked while trying to join {SERVER}: <white>{REASON}");
+        d.put("velocity-kick-message", "<red>你在尝试加入 {SERVER} 时被踢出: <white>{REASON}");
 
         d.put("updater.update-available",
                 "<gray><strikethrough>                                                         <reset>\n" +
-                        "  <green>An update is available for ajQueue!\n" +
-                        "  <dark_green>You can download it by " +
-                        "<click:run_command:/ajqueue update><bold>clicking here</bold>\n    or running <gray>/ajQueue update</click>\n" +
+                        "  <green>ajQueue 有可用更新!\n" +
+                        "  <dark_green>你可以通过 " +
+                        "<click:run_command:/ajqueue update><bold>点击这里</bold>\n    或运行 <gray>/ajQueue update</click>\n" +
                         "<gray><strikethrough>                                                         <reset>"
         );
-        d.put("updater.no-update", "<red>There is not an update available");
-        d.put("updater.success", "<green>The update has been downloaded! Now just restart the server");
-        d.put("updater.fail", "<red>An error occurred while downloading the update. Check the console for more info.");
-        d.put("updater.already-downloaded", "<red>The update has already been downloaded.");
+        d.put("updater.no-update", "<red>没有可用的更新");
+        d.put("updater.success", "<green>更新已下载! 现在只需重启服务器");
+        d.put("updater.fail", "<red>下载更新时发生错误. 请检查控制台以获取更多信息.");
+        d.put("updater.already-downloaded", "<red>更新已下载.");
 
         List<String> oldProtocolNames = config.getStringList("protocol-names");
         for (String oldProtocolName : oldProtocolNames) {
